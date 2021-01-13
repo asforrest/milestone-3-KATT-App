@@ -2,6 +2,12 @@
 {% block content %}
 <p>Hello</p>
 
+    {% for activity in activities %}
+        {{ activity.activity_name }}<br>
+        {{ activity.start_time }}<br>
+        {{ activity.end_time }}<br>
+    {% endfor %}
+
 <div class="nav-content tabs-dashboard">
     <ul class="tabs tabs-transparent">
         <li class="tab"><a href="#test1">Test 1</a></li>
@@ -10,11 +16,5 @@
         <li class="tab"><a href="#test4">Test 4</a></li>
     </ul>
 </div>
-
-    {% for activity in activities %}
-        {{ activity.activity_name }}<br>
-        {{ activity.start_time }}<br>
-        {{ activity.end_time }}<br>
-    {% endfor %}
 
 {% endblock %}

@@ -16,15 +16,18 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/get_activities")
 def get_activities():
     activities = mongo.db.activities.find()
     return render_template("activities.html", activities=activities)
 
+
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html")
+    activities = mongo.db.activities.find()
+    return render_template("dashboard.html", activities=activities)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

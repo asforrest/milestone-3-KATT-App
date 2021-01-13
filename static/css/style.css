@@ -13,3 +13,7 @@ body {
 .btn-activity-input {
     width: 100%;
 }
+
+.container-timer {
+    height: 50vh;
+}
