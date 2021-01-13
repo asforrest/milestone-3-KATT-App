@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App</title>
+</head>
+<body>
+    {% for activity in activities %}
+        {{ activity.activity_name }}<br>
+        {{ activity.start_time }}<br>
+        {{ activity.end_time }}<br>
+    {% end for %}
+</body>
+</html>
