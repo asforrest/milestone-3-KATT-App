@@ -26,19 +26,32 @@ def get_activities():
 
 # The code for user registration and sessions was adpated 
 # from the User Authentication lessons @ Code Institute
-# @app.route("/register", methods=["GET"], ["POST"])
-# def register():
-#     return render_template("register.html")
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"email": request.form.get("email")})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        register = {
+            "email": request.form.get("email"),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("email")
+        flash("Registration Successful")
+    return render_template("register.html")
 
 @app.route("/dashboard")
 def dashboard():
     activities = mongo.db.activities.find()
     return render_template("dashboard.html", activities=activities)
-
-@app.route("/register")
-def register():
-    users = mongo.db.users.find()
-    return render_template("register.html", users=users)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
