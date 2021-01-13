@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<p>Hello</p>
+
+<div class="nav-content tabs-dashboard">
+    <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Test 1</a></li>
+        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+        <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+        <li class="tab"><a href="#test4">Test 4</a></li>
+    </ul>
+</div>
+
+    {% for activity in activities %}
+        {{ activity.activity_name }}<br>
+        {{ activity.start_time }}<br>
+        {{ activity.end_time }}<br>
+    {% endfor %}
+
+{% endblock %}

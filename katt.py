@@ -22,6 +22,10 @@ def get_activities():
     activities = mongo.db.activities.find()
     return render_template("activities.html", activities=activities)
 
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
