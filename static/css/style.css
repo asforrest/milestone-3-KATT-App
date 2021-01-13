@@ -9,3 +9,7 @@ body {
 .tabs-dashboard {
     background-color: blue;
 }
+
+.btn-activity-input {
+    width: 100%;
+}
