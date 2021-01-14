@@ -19,6 +19,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/get_activities")
 def get_activities():
     activities = mongo.db.activities.find()
@@ -38,6 +43,8 @@ def register():
             return redirect(url_for("register"))
 
         register = {
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
             "email": request.form.get("email"),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -84,7 +91,18 @@ def profile():
     # Grab session use's email from the db
     email = mongo.db.users.find_one(
         {"email": session["user"]})["email"]
-    return render_template("profile.html", email=email)
+    if session["user"]:
+        return render_template("profile.html", email=email)
+
+    return redirect(url_for("login"))
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You've been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
 
 @app.route("/dashboard")
 def dashboard():
