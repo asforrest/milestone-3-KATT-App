@@ -1,9 +1,12 @@
 header {
     margin-bottom: 50px;
+    font-family: 'Heebo', sans-serif;
 }
 
 body {
     background-color: azure;
+    font-family: 'Heebo', sans-serif;
+
 }
 
 .close-mobile-menu {
@@ -17,6 +20,11 @@ body {
 .btn-activity-input {
     width: 100%;
     margin: 5px;
+}
+
+.btn-activity-stop {
+    margin-top: 20px;
+    width: 35%;
 }
 
 .container-timer {

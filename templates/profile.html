@@ -5,9 +5,10 @@
     <div class="col s0 m2 l2">
     </div>
     <div class="col s12 m8 l8">
-        <div class="card-panel center">
-            <h3>Welcome {{ email }}</h3>
-            <p>Welcome {{ first_name }}</p>
+        <div class="card-panel">
+            <h1>Profile</h1>
+            <p>Name: {{ user['first_name'] }} {{ user['last_name'] }}</p>    
+            <p>Email: {{ user['email'] }}</p>
         </div>
     </div>
     <div class="col s0 m2 l2">

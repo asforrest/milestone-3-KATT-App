@@ -89,12 +89,14 @@ def login():
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     # Grab session use's email from the db
-    email = mongo.db.users.find_one(
-        {"email": session["user"]})["email"]
+    user = mongo.db.users.find_one(
+         {"email": session["user"]})
     if session["user"]:
-        return render_template("profile.html", email=email)
+        return render_template("profile.html", user=user)
 
     return redirect(url_for("login"))
+
+
 
 @app.route("/logout")
 def logout():
