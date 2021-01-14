@@ -34,7 +34,7 @@ def register():
             {"email": request.form.get("email")})
 
         if existing_user:
-            flash("Username already exists")
+            flash("You are already registered, please log in with your email address and password")
             return redirect(url_for("register"))
 
         register = {
@@ -46,12 +46,51 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("email")
         flash("Registration Successful")
+        return redirect(url_for('profile', email=session["user"]))
     return render_template("register.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # check if username exists in db
+        existing_user = mongo.db.users.find_one(
+            {"email": request.form.get("email")})
+
+        if existing_user:
+            # ensure hashed password matches user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("email")
+                    flash("Welcome, {}".format(
+                        request.form.get("email")))
+                    return redirect(url_for(
+                        'profile', email=session["user"]))
+            else:
+                # invalid password match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
+
+
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    # Grab session use's email from the db
+    email = mongo.db.users.find_one(
+        {"email": session["user"]})["email"]
+    return render_template("profile.html", email=email)
 
 @app.route("/dashboard")
 def dashboard():
     activities = mongo.db.activities.find()
     return render_template("dashboard.html", activities=activities)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
