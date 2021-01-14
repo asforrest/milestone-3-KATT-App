@@ -5,49 +5,51 @@
     <div class="col s12 center">
         <br>
         <h4>Duration:</h4>
-        <h1 style="font-weight: 600;"><span id="minutes"></span>:<span id="seconds"></span></h1>
+        <h1 id="count_up_timer" style="font-weight: 600;"><span id="minutes"></span>:<span id="seconds"></span></h1>
         <br>
         <h4>Currently you are:</h4>
+        <div id="current_activity">
         <h1 style="font-weight: 600;"><i class="fas fa-briefcase"></i>  Working</h1>
+        </div>
         <a class="waves-effect waves-light btn-small red darken-1 btn-activity-stop">Stop</a>
     </div>
 </div>
 <div class="row">
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-briefcase left"></i>Work</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyWorking()"><i class="fas fa-briefcase left"></i>Work</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-bed left"></i>Sleep</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlySleeping()"><i class="fas fa-bed left"></i>Sleep</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-baby left"></i>Childcare</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyChildcaring()"><i class="fas fa-baby left"></i>Childcare</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-graduation-cap left"></i>Study</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyStudying()"><i class="fas fa-graduation-cap left"></i>Study</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-dumbbell left"></i>Strength</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyStrengthing()"><i class="fas fa-dumbbell left"></i>Strength</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-running left"></i>Cardio</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyCardioing()"><i class="fas fa-running left"></i>Cardio</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-guitar left"></i>Play Music</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyMusicing()"><i class="fas fa-guitar left"></i>Play Music</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-soap left"></i>Cleaning</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyCleaning()"><i class="fas fa-soap left"></i>Cleaning</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-compass left"></i>Travel</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyTraveling()"><i class="fas fa-compass left"></i>Travel</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-film left"></i>Watching</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyWatching()"><i class="fas fa-film left"></i>Watching</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-gamepad left"></i>Videogames</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyVideogaming()"><i class="fas fa-gamepad left"></i>Videogames</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input"><i class="fas fa-random left"></i>Other</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyOthering()"><i class="fas fa-random left"></i>Other</a>
     </div>
 </div>
 {% endblock %}
