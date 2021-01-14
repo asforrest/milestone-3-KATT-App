@@ -1,18 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for activity in activities %}
-        {{ activity.activity_name }}<br>
-        {{ activity.start_time }}<br>
-        {{ activity.end_time }}<br>
-    {% endfor %}
-
 <div class="row container-timer">
     <div class="col s12 center">
-        <p>This is where I'm building the timer</p>
         <br>
         <h4>Duration:</h4>
-        <h1 style="font-weight: 600;"> 00:02:47</h1>
+        <h1 style="font-weight: 600;"><span id="minutes"></span>:<span id="seconds"></span></h1>
         <br>
         <h4>Currently you are:</h4>
         <h1 style="font-weight: 600;"><i class="fas fa-briefcase"></i>  Working</h1>
