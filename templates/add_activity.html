@@ -7,8 +7,8 @@
     <div class="col s12 m8 l8">
         <div class="card-panel center">
             <div class="row">
-                <!-- User registration Form -->
-                <form class="col s12" method="POST" action="">
+                <!-- Add Activity Form -->
+                <form class="col s12" method="POST" action="{{ url_for('add_activity') }}">
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="date" name="date" type="text" class="datepicker validate" required>
@@ -17,7 +17,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <select id="category_name" name="category_name" class="validate" required>
+                            <select id="category_name" name="category_name" class="validate dropdown-formatting" required>
                                 <option value="" disabled selected>Choose your activity</option>
                                 {% for category in categories %}
                                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="row">
                         <button type="submit" class="col s12 btn-large">
-                            <i class="fas fa-edit"></i> Add Activity 
+                            <i class="fas fa-paper-plane"></i> Add Activity 
                         </button>
                     </div>
                 </form>

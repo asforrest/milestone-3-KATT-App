@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Dashboard</h1>
-{% for activity in activities %}
-Welcome {{ activity.user_id }} Here is an overview of all of your logged activities.
+
+Here is an overview of all of your logged activities.
+
 
 <div class="row activity">
     <div class="col s12">
@@ -14,16 +15,21 @@ Welcome {{ activity.user_id }} Here is an overview of all of your logged activit
                     <th>Start Time</th>
                     <th>End Time</th>
                     <th>Duration</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
-
+{% for activity in activities %}
             <tbody>
                 <tr>
+
                     <td>{{ activity.date }}</td>
                     <td>{{ activity.activity_name }}</td>
                     <td>{{ activity.start_time }}</td>
                     <td>{{ activity.end_time }}</td>
                     <td>{{ activity.duration }}</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
                 </tr>
             </tbody>
         </table>

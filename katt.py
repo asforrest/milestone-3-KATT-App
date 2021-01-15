@@ -112,8 +112,20 @@ def dashboard():
     return render_template("dashboard.html", activities=activities)
 
 
-@app.route("/add_activity.html")
+@app.route("/add_activity", methods=["GET", "POST"])
 def add_activity():
+    if request.method == "POST":
+        activity = {
+            "date": request.form.get("date"),
+            "activity": request.form.get("activity_name"),
+            "start_time": request.form.get("start_time"),
+            "end_time": request.form.get("end_time"),
+            "user_id": session["user"],
+            "duration": "test_duration"
+        }
+        mongo.db.activities.insert_one(activity)
+        flash("Activity added successfully")
+        return redirect(url_for("get_activities"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_activity.html", categories=categories)
 
