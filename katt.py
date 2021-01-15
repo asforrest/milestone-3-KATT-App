@@ -26,7 +26,7 @@ def home():
 
 @app.route("/get_activities")
 def get_activities():
-    activities = mongo.db.activities.find()
+    activities = list(mongo.db.activities.find())
     return render_template("activities.html", activities=activities)
 
 # The code for user registration and sessions was adpated 
@@ -112,11 +112,16 @@ def dashboard():
     return render_template("dashboard.html", activities=activities)
 
 
+@app.route("/add_activity.html")
+def add_activity():
+    return render_template("add_activity.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
+            
 
 # Stopwatch code has been adapted from a tuturiol by Codegnan
 # Source: https://www.youtube.com/watch?v=ekOeCnCSyUc

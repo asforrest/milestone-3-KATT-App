@@ -6,18 +6,15 @@
         <br>
         <h4>Duration:</h4>
         <h1 id="count_up_timer" style="font-weight: 600;"><span id="minutes"></span>:<span id="seconds"></span></h1>
+    <a href="{{ url_for('add_activity') }}" class="waves-effect waves-light btn-small btn-activity-stop" onclick="" name="add_activity" id="add_activity"><i class="fas fa-edit left"></i>Manually Add Activity</a>
         <br>
-    <!-- TEST AREA -->
-        <div class="test-area">
-
-        </div>
-    <!-- TEST AREA -->
+        <br>
         <br>
         <h4>Currently you are:</h4>
         <div id="current_activity">
         <h1 style="font-weight: 600;"><i class="fas fa-ban"></i> No Activity Selected</h1>
         </div>
-        <a class="waves-effect waves-light btn-small red darken-1 btn-activity-stop" onclick="currentlyStopped()"><i class="fas fa-ban"></i></a>
+        <a class="waves-effect waves-light btn-small red darken-1 btn-activity-stop" onclick="currentlyStopped()"><i class="fas fa-ban left"></i>Stop Activity</a>
     </div>
 </div>
 <div class="row">
@@ -58,7 +55,7 @@
         <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyWatching()" name="watching" id="watching"><i class="fas fa-film left"></i>Watching</a>
     </div>
     <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyVideogaming()" name="videogames" id="videogames"><i class="fas fa-gamepad left"></i>Videogames</a>
+        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyVideogaming()" name="games" id="games"><i class="fas fa-gamepad left"></i>games</a>
     </div>
     <div class="col s6 m4 l3 center">
         <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyOthering()" name="other" id="other"><i class="fas fa-random left"></i>Other</a>

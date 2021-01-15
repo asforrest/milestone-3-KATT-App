@@ -95,7 +95,7 @@ function currentlyWatching() {
 }
 
 function currentlyVideogaming() {
-    document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-gamepad"></i>  Videogames</h1>';
+    document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-gamepad"></i>  Games</h1>';
     restartTimer()
 }
 
@@ -104,3 +104,8 @@ function currentlyOthering() {
     restartTimer()
 }
 
+// Modal trigger
+
+$(document).ready(function(){
+    $('.modal').modal();
+});

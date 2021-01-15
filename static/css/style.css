@@ -30,3 +30,7 @@ body {
 .container-timer {
     height: 40vh;
 }
+
+.modal {
+    background-color: #ea6f75;
+}

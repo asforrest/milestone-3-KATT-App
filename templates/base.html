@@ -35,10 +35,34 @@
                     <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
                     <li><a href="{{ url_for('profile') }}">Profile</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <!-- Materialize Modal -->    
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">KATT Radio</a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content center">
+                        <h4>KATT Radio</h4>
+                        <p><iframe src="https://open.spotify.com/embed/playlist/4R66AH8WgbautnmNeaxQw7" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p>
+                        <a href="#!" class="modal-close waves-effect waves-light btn">Close</a>
+                        </div>
+                    </div>
                 {% else %}
                     <li><a href="{{ url_for('home') }}">KATT App</a></li>
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <!-- Materialize Modal -->    
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">KATT Radio</a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content center">
+                        <h4>KATT Radio</h4>
+                        <iframe src="https://open.spotify.com/embed/playlist/4R66AH8WgbautnmNeaxQw7" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <a href="#!" class="modal-close waves-effect waves-light btn">Close</a>
+                        </div>
+                    </div>
                 {% endif %}
 
                     
