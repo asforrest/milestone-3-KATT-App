@@ -8,27 +8,32 @@
         <div class="card-panel center">
             <div class="row">
                 <!-- User registration Form -->
-                <form class="col s12" method="POST" action="{{ url_for('register') }}">
+                <form class="col s12" method="POST" action="">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="input_date" name="input_date" type="date" class="validate" required>
-                            <label for="input_date"><i class="fas fa-date"></i> Date</label>
+                            <input id="date" name="date" type="text" class="datepicker validate" required>
+                            <label for="date"><i class="fas fa-date"></i> Date</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="input_activity" name="input_activity" type="text" class="validate" required>
-                            <label for="input_activity"><i class="far fa-check-circle"></i> Activity - Change to Dropdown</label>
+                            <select id="category_name" name="category_name" class="validate" required>
+                                <option value="" disabled selected>Choose your activity</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label>Activity</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="input_start_time" name="input_start_time" type="time" class="validate" required>
-                            <label for="input_start_time"><i class="fas fa-time"></i> Start Time</label>
+                            <input id="start_time" name="start_time" type="time" class="validate" required>
+                            <label for="start_time"><i class="fas fa-time"></i> Start Time</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="input_end_time" name="input_end_time" type="time" class="validate" required>
-                            <label for="input_end_time"><i class="fas fa-time"></i> End Time</label>
+                            <input id="end_time" name="end_time" type="time" class="validate" required>
+                            <label for="end_time"><i class="fas fa-time"></i> End Time</label>
                         </div>
                     </div>
                     <div class="row">

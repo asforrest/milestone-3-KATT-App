@@ -6,6 +6,7 @@ header {
 body {
     background-color: azure;
     font-family: 'Heebo', sans-serif;
+    color: black;
 
 }
 
@@ -31,6 +32,6 @@ body {
     height: 40vh;
 }
 
-.modal {
-    background-color: #ea6f75;
+.modal-radio {
+    background-color: darkslategray;
 }

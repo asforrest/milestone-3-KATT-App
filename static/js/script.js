@@ -1,5 +1,17 @@
 $(document).ready(function(){
+    // Materialize components
     $('.sidenav').sidenav({edge: "right"});
+    $('.modal').modal();
+    $('select').formSelect();
+    $('.datepicker').datepicker({
+        format: "yyyy - mm - dd",
+        yearRange: 100,
+        firstDay: 0,
+        showClearBtn: true,
+        i18n: {
+            done: "Select"
+        }
+    });
   });
 
 
@@ -103,9 +115,3 @@ function currentlyOthering() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-random"></i>  Other</h1>';
     restartTimer()
 }
-
-// Modal trigger
-
-$(document).ready(function(){
-    $('.modal').modal();
-});
