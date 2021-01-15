@@ -108,7 +108,7 @@ def logout():
 
 @app.route("/dashboard")
 def dashboard():
-    activities = mongo.db.activities.find()
+    activities = mongo.db.activities.find({"user_id": session["user"]})
     return render_template("dashboard.html", activities=activities)
 
 

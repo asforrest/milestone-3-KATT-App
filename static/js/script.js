@@ -13,6 +13,8 @@ $(document).ready(function(){
             done: "Select"
         }
     });
+
+
     
     // The following validation is code is from the Code Institute and solves an issue within
     // Materialize that doesn't use proper validation on drop down menus
@@ -45,6 +47,8 @@ $(document).ready(function(){
     }
   });
 
+// Global Vars
+var currentDate = new Date();
 
 // The following code was adapted from an answer found on stackoverflow. The solution was
 // giving by Bakudan and later edited by LWC. Here is the original source:
@@ -80,16 +84,32 @@ function stopTimer(){
     sec = 0;
 }
 
+function startTime(){
+    currentDate = new Date();
+    start_time = currentDate.toLocaleTimeString();
+}
+
+function writeActivity(){
+    currentDate = new Date();
+    date = currentDate.getFullYear() + " - " + currentDate.getMonth() + " - " + currentDate.getDate();
+    end_time = currentDate.toLocaleTimeString();
+    console.log(date)
+    console.log(end_time)
+    console.log(start_time)
+}
+
 // Stopwatch button triggers
 
 function currentlyStopped() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-ban"></i> No Activity Selected</h1>';
     stopTimer()
+    writeActivity()
 }
 
 function currentlyWorking() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-briefcase"></i>  Working</h1>';
     restartTimer()
+    startTime()
 }
 
 function currentlySleeping() {
