@@ -87,16 +87,20 @@ function stopTimer(){
 function startTime(a){
     currentDate = new Date();
     start_time = currentDate.toLocaleTimeString();
-    actvity_name = a // MUST DEFINE AT THE TOP LEVEL 
+    activity_name = a
 }
 
 function writeActivity(){
     currentDate = new Date();
-    date = currentDate.getFullYear() + " - " + currentDate.getMonth() + " - " + currentDate.getDate();
+    month = ("0" + (currentDate.getMonth() + 1)).slice(-2)
+    day = ("0" + currentDate.getDate()).slice(-2)
+    date = currentDate.getFullYear() + " - " + month + " - " + day;
     end_time = currentDate.toLocaleTimeString();
-    console.log(date)
+    console.log(day)
+    console.log(month)
     console.log(end_time)
     console.log(start_time)
+    console.log(activity_name) // MUST DEFINE AT THE TOP LEVEL
     const data = { username: 'example' };
 
     const formData = new FormData();
