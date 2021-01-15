@@ -1,3 +1,5 @@
+# Stopwatch code has been adapted from a tuturiol by Codegnan
+# Source: https://www.youtube.com/watch?v=ekOeCnCSyUc
 import time
 def time_convert(secs):
     mins = secs // 60

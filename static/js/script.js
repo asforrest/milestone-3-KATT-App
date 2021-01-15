@@ -7,31 +7,46 @@ $(document).ready(function(){
 // giving by Bakudan and later edited by LWC. Here is the original source:
 // https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
 
+// HIDE TIMER, SHOW TIMER AND RESET TO 0
+
 var sec = 0;
     function pad ( val ) { return val > 9 ? val : "0" + val; }
     setInterval( function(){
-        $("#seconds").html(pad(++sec%60));
+        if (running){
+            sec ++}
+        $("#seconds").html(pad(sec%60));
         $("#minutes").html(pad(parseInt(sec/60,10)));
     }, 1000);
 
 
+var running = false
 
-
+function turn_on(){
+    running = true;
+    sec = 0;
+}
 
 function currentlyWorking() {
-  document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-briefcase"></i>  Working</h1>';
+    document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-briefcase"></i>  Working</h1>';
+    turn_on();
 }
 
 function currentlySleeping() {
   document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-bed"></i>  Sleep</h1>';
+  running = true;
+  sec = 0;
 }
 
 function currentlyChildcaring() {
   document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-baby"></i>  Childcare</h1>';
+      running = true;
+    sec = 0;
 }
 
 function currentlyStudying() {
   document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-graduation-cap"></i>  Study</h1>';
+      running = true;
+    sec = 0;
 }
 
 function currentlyStrengthing() {

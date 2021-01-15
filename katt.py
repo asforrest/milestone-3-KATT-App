@@ -116,3 +116,52 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
+
+# Stopwatch code has been adapted from a tuturiol by Codegnan
+# Source: https://www.youtube.com/watch?v=ekOeCnCSyUc
+import time
+def time_convert(secs):
+    mins = secs // 60
+    secs = secs % 60
+    hours = mins // 60
+    min = mins % 60
+    print("Duration = {0}:{1}:{2}".format(int(hours),int(mins),int(secs)))
+input("Press Enter to start")
+start_time = time.time()
+try:
+    hours = 0
+    while True:
+        for minutes in range(0, 60):
+            for seconds in range(0, 60):
+                time.sleep(1)
+                print(hours, ":", minutes, ":", seconds+1)
+except KeyboardInterrupt:
+    end_time = time.time()
+    time_duration = end_time - start_time
+    time_convert(time_duration)
+
+
+from datetime import datetime
+
+def run():
+    current_time = datetime.now()
+    diff = current_time - start_time
+    txt.var.set('%d.%02d' % (diff.seconds,diff.microseconds//10000))
+
+    if running:
+        root.after(20,run) #to reschedule after 20ms
+
+
+def start():
+    global running
+    global start_time
+
+    if not running:
+        running = True
+        start_time = datetime.now()
+        root.after(10,run)
+
+def stop():
+    global running
+    running = Flase
