@@ -84,9 +84,10 @@ function stopTimer(){
     sec = 0;
 }
 
-function startTime(){
+function startTime(a){
     currentDate = new Date();
     start_time = currentDate.toLocaleTimeString();
+    actvity_name = a // MUST DEFINE AT THE TOP LEVEL 
 }
 
 function writeActivity(){
@@ -96,7 +97,24 @@ function writeActivity(){
     console.log(date)
     console.log(end_time)
     console.log(start_time)
+    const data = { username: 'example' };
+
+    const formData = new FormData();
+    const fileField = document.querySelector('input[type="file"]');
+
+    formData.append('end_time', end_time);
+    formData.append('start_time', start_time);
+    formData.append('category_name', activity_name);
+    formData.append('date', date);
+
+
+    fetch('/add_activity', {
+        method: 'POST', // or 'PUT'
+        body: formData
+    })
 }
+
+
 
 // Stopwatch button triggers
 
@@ -109,7 +127,7 @@ function currentlyStopped() {
 function currentlyWorking() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-briefcase"></i>  Working</h1>';
     restartTimer()
-    startTime()
+    startTime('working')
 }
 
 function currentlySleeping() {
