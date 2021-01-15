@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col s0 m2 l2">
+    </div>
+    <div class="col s12 m8 l8">
+        <div class="card-panel center">
+            <div class="row">
+                <!-- Edit Activity Form -->
+                <form class="col s12" method="POST" action="{{ url_for('edit_activity', activity_id=activity._id) }}">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="date" name="date" type="text" class="datepicker validate" required>
+                            <label for="date"><i class="fas fa-date"></i> Date</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="category_name" name="category_name" class="validate dropdown-formatting" required>
+                                <option value="" disabled selected>Choose your activity</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label>Activity</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="start_time" name="start_time" type="time" class="validate" required>
+                            <label for="start_time"><i class="fas fa-time"></i> Start Time</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="end_time" name="end_time" type="time" class="validate" required>
+                            <label for="end_time"><i class="fas fa-time"></i> End Time</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="col s12 btn-large">
+                            <i class="fas fa-edit"></i> Edit Activity 
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col s0 m2 l2">
+    </div>
+</div>
+<div class="row">
+    <div class="col s12">
+        <p class="center-align">Already been here before? <a href="{{ url_for('login') }}">login</a> to start managing that time!</p>
+    </div>
+</div>
+
+{% endblock %}
