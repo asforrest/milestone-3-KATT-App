@@ -117,7 +117,7 @@ def add_activity():
     if request.method == "POST":
         activity = {
             "date": request.form.get("date"),
-            "activity": request.form.get("activity_name"),
+            "activity_name": request.form.get("category_name"),
             "start_time": request.form.get("start_time"),
             "end_time": request.form.get("end_time"),
             "user_id": session["user"],

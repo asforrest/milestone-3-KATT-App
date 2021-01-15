@@ -19,10 +19,9 @@ Here is an overview of all of your logged activities.
                     <th>Delete</th>
                 </tr>
             </thead>
-{% for activity in activities %}
             <tbody>
+                {% for activity in activities %}
                 <tr>
-
                     <td>{{ activity.date }}</td>
                     <td>{{ activity.activity_name }}</td>
                     <td>{{ activity.start_time }}</td>
@@ -31,9 +30,10 @@ Here is an overview of all of your logged activities.
                     <td>Edit</td>
                     <td>Delete</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
-{% endfor %}
+
     </div>
 </div>
 
