@@ -27,8 +27,12 @@ Here is an overview of all of your logged activities.
                     <td>{{ activity.start_time }}</td>
                     <td>{{ activity.end_time }}</td>
                     <td>{{ activity.duration }}</td>
-                    <td>Edit</td>
-                    <td>Delete</td>
+                    <td>
+                        <a href="" class="btn-small light-blue">Edit</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn-small red">Delete</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
