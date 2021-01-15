@@ -132,9 +132,9 @@ def add_activity():
 
 @app.route("/edit_activity/<activity_id>", methods=["GET", "POST"])
 def edit_activity(activity_id):
-    activity = mongo.db.activity.find_one({"_id": ObjectId()})
+    activity = mongo.db.activities.find_one({"_id": ObjectId(activity_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_activity.html", activity = activity, categories=categories)
+    return render_template("edit_activity.html", activity=activity, categories=categories)
 
 
 if __name__ == "__main__":
