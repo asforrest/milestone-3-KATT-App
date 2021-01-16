@@ -112,6 +112,7 @@ When taking the methodology into account the following process has been created:
 1. Create API to share the data.
 1. Create search functionality on the dashboard.
 1. Create a global dashboard with aggrigated data about all users.
+1. Add more data interactivity on the dashboard, like ordering by different headers.
 
 
 ## Technologies Used
