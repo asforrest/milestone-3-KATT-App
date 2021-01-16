@@ -26,7 +26,7 @@ This web app aims to solve a real-world problem by assisting users with their ti
 
 1. [Materialize:](https://materializecss.com/)
     - Materialize was used to assist with the responsiveness and styling of the website.
-?? 1. [Google Fonts:](https://fonts.google.com/)
+1. [Google Fonts:](https://fonts.google.com/)
     - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
 1. [jQuery:](https://jquery.com/)
     - jQuery came with Bootstrap to make the modals work properly, as well as simplifies DOM manipulation.
@@ -52,3 +52,32 @@ This web app aims to solve a real-world problem by assisting users with their ti
 ??    - stuff
 1. [MongoDB]
 ??    - More stuff
+
+
+
+
+## Contact
+
+If you have any questions about this project or updates then you can contact the developer [Alexander Forrest via his GitHub user profile](https://github.com/asforrest) or alternatively you can send an email to [mailto](mailto:asforrest@icloud.com).
+
+## Credits
+
+The following is an overview of credits for the different people and sources used.
+
+### Content / Sources
+
+All sources used have been documented throughout the code in the website through the use of comments. The structure of these comment starts with an explanation of what has been adapted for this project and then the source is given.
+
+The main source for this project was the mini-project from the code institute. This project deals with creating a Task Manager app. The data model is similar to the data model for KATT and was therefore used to create the main structure after an design was decided upon.
+
+### Media
+
+The image used on the homepage is an embedded image hosted on Giphy. This is attributed.
+
+### Personal Acknowledgements
+
+I would like to thank:
+- My mentor Jonathan for his patience, knowledge, experience and support.
+- Kevin, Michael, and all the other tutors at Code Institute, who took the time to check my workspace, my project and lead me towards the answers I was looking for without just giving me the answers.
+- My wife, Alba, for het patience and for taking care of our newborn baby, Zoë, while finishing up this project.
+- Code Institute Student Care for checking in with me, keeping me motivated, and being understanding about the fact that becoming a new father meant that my priorities were split between my studies, work and childcare duties.
