@@ -104,6 +104,7 @@ When taking the methodology into account the following process has been created:
 1. Editing and delting records.
 
 ### Features Left To implement
+1. Validation on the data entered by users (does it already exist, is the end time after the start time)
 1. Graphing the information.
 1. Customise different viewing options for improved user experience.
 1. Add inspirational quotes that are randomly shown when opening the app.
@@ -182,15 +183,20 @@ Testing consisted of:
     -   Mozilla Firefox Tablet
 
 ### Code Validation
+
+#### CSS Validation
 The CSS code was validated without any issues.
 ![CSS Validation](testing/Validation-css.png "CSS Validationn")
 
+#### HTML Validation
 The HTML code was validated with many errors due to the structure of using Jinja templating language and Python for navigation. Due to the nature of this, the process was to run through the list and ignore any false errors due to the structure of this site. See the image for an example of the errors:
 ![HTML Validation](testing/Validation-html.png "HTML Validationn")
 
+#### JavaScript Validation
 The JavaScript code was validated with some 'unused variable' errors, however this is due to onClick functions and these functions are being called on the HTML page. See image for examples:
 ![JavaScript Validation](testing/Validation-js.png "JavaScript Validation")
 
+#### Python Validation
 The Python code was validated to be PEP8 compliant. There was one issue, but this stemed from an error in Code Institute's teaching materials with an indent issue. This was however fixed by Tim, a Code Institute tutor:
 ![Python Validation](testing/Validation-python.png "Python Validation")
 
@@ -218,6 +224,19 @@ The Python code was validated to be PEP8 compliant. There was one issue, but thi
 This project is saved to a [repository on GitHub](https://github.com/asforrest/KATT-App) and as such is open to the public.
 
 This project has also been [published to Heroku](https://katt-app.herokuapp.com/) both for evaluation by Code Institute and so that users can access and use the Web App.
+
+### Requiements for Automatic Deployment to Heroku
+
+1. GitHub account
+1. Mongo DB Account
+1. Heroku account
+1. Heroku Config Vars must be set to the same value as env.py
+1. env.py - to run locally, including:
+    1. IP
+    1. PORT
+    1. SECRET_KEY
+    1. MONGO_URI
+    1. MONGO_DB
 
 ### Steps For Deployment on Heroku
 
