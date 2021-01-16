@@ -150,10 +150,10 @@ def edit_activity(activity_id):
 
 
 @app.route("/delete_activity/<activity_id>")
-def delete_task(activity_id):
+def delete_activity(activity_id):
     mongo.db.activities.remove({"_id": ObjectId(activity_id)})
     flash("Activity Successfully Deleted")
-    return redirect(url_for("get_activites"))
+    return redirect(url_for("dashboard"))
 
 
 if __name__ == "__main__":

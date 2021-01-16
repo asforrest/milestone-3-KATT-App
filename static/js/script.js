@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('.modal').modal();
     $('select').formSelect();
+    $('.timepicker').timepicker();
     $('.datepicker').datepicker({
         format: "yyyy - mm - dd",
         yearRange: 100,
