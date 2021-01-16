@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -29,8 +29,11 @@ def get_activities():
     activities = list(mongo.db.activities.find())
     return render_template("activities.html", activities=activities)
 
-# The code for user registration and sessions was adpated 
+
+# The code for user registration and sessions was adpated
 # from the User Authentication lessons @ Code Institute
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -39,7 +42,9 @@ def register():
             {"email": request.form.get("email")})
 
         if existing_user:
-            flash("You are already registered, please log in with your email address and password")
+            flash(
+                "You are already registered,\
+                please log in with your email address and password")
             return redirect(url_for("register"))
 
         register = {
@@ -67,12 +72,12 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("email")
-                    flash("Welcome, {}".format(
-                        request.form.get("email")))
-                    return redirect(url_for(
-                        'profile', email=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                        session["user"] = request.form.get("email")
+                        flash("Welcome, {}".format(
+                            request.form.get("email")))
+                        return redirect(url_for(
+                            'profile', email=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -95,7 +100,6 @@ def profile():
         return render_template("profile.html", user=user)
 
     return redirect(url_for("login"))
-
 
 
 @app.route("/logout")
@@ -142,11 +146,13 @@ def edit_activity(activity_id):
             "user_id": session["user"],
             "duration": "test_duration"
         }
-        mongo.db.activities.update({"_id": ObjectId(activity_id)}, activityEdit)
+        mongo.db.activities.update(
+            {"_id": ObjectId(activity_id)}, activityEdit)
         flash("Activity Successfully Update")
     activity = mongo.db.activities.find_one({"_id": ObjectId(activity_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_activity.html", activity=activity, categories=categories)
+    return render_template(
+        "edit_activity.html", activity=activity, categories=categories)
 
 
 @app.route("/delete_activity/<activity_id>")

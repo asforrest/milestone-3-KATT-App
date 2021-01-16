@@ -191,7 +191,10 @@ The HTML code was validated with many errors due to the structure of using Jinja
 ![HTML Validation](testing/Validation-html.png "HTML Validationn")
 
 The JavaScript code was validated with some 'unused variable' errors, however this is due to onClick functions and these functions are being called on the HTML page. See image for examples:
-![JavaScript Validation](testing/Validation-js.png "JavaScript Validationn")
+![JavaScript Validation](testing/Validation-js.png "JavaScript Validation")
+
+The Python code was validated:
+![JavaScript Validation](testing/Validation-js.png "JavaScript Validation")
 
 ### Interesting and Ongoing Bugs
 1. Issue receiving data from MongoDB
@@ -199,8 +202,41 @@ The JavaScript code was validated with some 'unused variable' errors, however th
 2. Issue where refactored answer from StackOverflow is too refactored
     -   I found code to create a stop watch, however this code was refactored with inline code. By splitting this code out and removing the sec element I was able to create boolean instance of a running variable. Once I had this variable I can pass through True and False values. This made it possible to crate new functions. I've put a omment about this case study in the file script.js.
 3. Issues translating time calulcations onto MongoDB
-    -    This was an interesting case that I solved with my mentor. The issue was that I was making time and date calculation in JavaScript based on button onClick actions. Then in order to get these time and dates onto the database I first needed to append them to my form functions (existing input function) and then they could be read by existing code I had for manual data entry. I found this a valuable learning opportunity.
+    -   This was an interesting case that I solved with my mentor. The issue was that I was making time and date calculation in JavaScript based on button onClick actions. Then in order to get these time and dates onto the database I first needed to append them to my form functions (existing input function) and then they could be read by existing code I had for manual data entry. I found this a valuable learning opportunity.
+4. Massive issue with deployment via Heroku
+    -   During the last 24 hours before sumbitting the project the app wouldn't build. Up to the last hour Alexander was busy with tutor support to get it working.
+    -   The issue started when the Procfile had a typo and Heroku wouldn't properly build the app.
+    -   There were issues with installed, unused packages that were also causing drag on the system.
+    -   See the following images for the logs:
+        ![Heroku Logs](testing/heroku-logs.png "Heroku Logs")
+    -   Together with senior tutor support specialists fmor Code Institute we tried solving this issues taking the following steps:
+        -   Rebuilding the app mulpile times
+        -   Trying 3e party build packages
+        -   Renaming files
+    -   After 24 hours of stress, tackeling the issue from different angles, it was with one of the tutors, Tim, that helped solved the last problems. In the end these issues were resolved at 10:58 GMT and the project was due 12:00 GMT.
 
+## Deployment
+
+This project is saved to a [repository on GitHub](https://github.com/asforrest/KATT-App) and as such is open to the public.
+
+This project has also been [published to Heroku]((https://katt-app.herokuapp.com/) both for evaluation by Code Institute and so that users can access and use the Web App.
+
+### Steps For Deployment on Heroku
+
+1.  Check that GitHub repisotry is update to date with latest commit.
+1.  Create a free account on Heroku
+1.  Go to Settings for the app and add the configuration variables from env.py, these are the security keys and not shared via Github.
+1.  Link GitHub and Heroku via the options under delpoyment in the Heroku web app.
+1.  Click Deploy
+1.  The App builds and is then available, this app is available via https://katt-app.herokuapp.com/
+
+### Running The Code Locally
+
+If you wish to download a copy of the code in order to run the code locally, this is also possible. To do this go to the [KATT repository on GitHub](https://github.com/asforrest/KATT-App) click on 'Code' in the top right and select the method you want to use to download and run the code locally.
+
+### Running The Code Online In Your Own Environment
+
+If you wish to look at or work on the code in an online IDE, then it's recommended to use GitPod. If your using Google Chrome and you install the [Google Chrome GitPod extension](https://chrome.google.com/webstore/detail/gitpod-dev-environments-i/dodmmooeoklaejobgleioelladacbeki?hl=en) then you will see green 'Gitpod' button above [the repository](https://github.com/Code-Institute-Solutions/readme-template) and this will load the code into your own Gitpod environment.
 
 ## Contact
 
