@@ -148,7 +148,7 @@ When taking the methodology into account the following process has been created:
 1. [Heroku](https://www.heroku.com/)
     - Heroku is a web app deployment environment that also supports Python.
 1. [MongoDB](https://www.mongodb.com/)
-    - MongoDB is object based database software.
+    - MongoDB is non relational database software.
 
 
 ## Testing
@@ -189,8 +189,16 @@ The CSS code was validated without any issues.
 The HTML code was validated with many errors due to the structure of using Jinja templating language and Python for navigation. Due to the nature of this, the process was to run through the list and ignore any false errors due to the structure of this site. See the image for an example of the errors:
 ![HTML Validation](testing/Validation-html.png "HTML Validationn")
 
+The JavaScript code was validated with some 'unused variable' errors, however this is due to onClick functions and these functions are being called on the HTML page. See image for examples:
+![JavaScript Validation](testing/Validation-js.png "JavaScript Validationn")
 
-
+### Interesting and Ongoing Bugs
+1. Issue receiving data from MongoDB
+    -   There was an issue with my record not returning all the information because I was using an email address instead of a user name. I contacted Code Institute tutor support and worked through the issue with a tutor. I needed to use the email as a key to unlock the data from the database and return all the data into a variable called user so that I could then access the data.
+2. Issue where refactored answer from StackOverflow is too refactored
+    -   I found code to create a stop watch, however this code was refactored with inline code. By splitting this code out and removing the sec element I was able to create boolean instance of a running variable. Once I had this variable I can pass through True and False values. This made it possible to crate new functions. I've put a omment about this case study in the file script.js.
+3. Issues translating time calulcations onto MongoDB
+    -    This was an interesting case that I solved with my mentor. The issue was that I was making time and date calculation in JavaScript based on button onClick actions. Then in order to get these time and dates onto the database I first needed to append them to my form functions (existing input function) and then they could be read by existing code I had for manual data entry. I found this a valuable learning opportunity.
 
 
 ## Contact

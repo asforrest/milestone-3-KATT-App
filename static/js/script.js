@@ -103,10 +103,9 @@ function writeActivity(){
     console.log(end_time)
     console.log(start_time)
     console.log(activity_name) // MUST DEFINE AT THE TOP LEVEL
-    const data = { username: 'example' };
+    
 
     const formData = new FormData();
-    const fileField = document.querySelector('input[type="file"]');
 
     formData.append('end_time', end_time);
     formData.append('start_time', start_time);
@@ -117,7 +116,7 @@ function writeActivity(){
     fetch('/add_activity', {
         method: 'POST', // or 'PUT'
         body: formData
-    })
+    });
 }
 
 // The following was adapted from a W3Schools tutorial. Source:
