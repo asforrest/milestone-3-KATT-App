@@ -97,8 +97,6 @@ When taking the methodology into account the following process has been created:
 - #### Repeat Where Needed
     1. During this final step it's important to have a prioritised overview as to what is important or unimport, urgent or not. Choise need to be made and the scope may need to be boundaried or expanded.
 
-
-
 ## Features
 ### Existing Features
 1. Track amount of time doing a task.
@@ -193,8 +191,8 @@ The HTML code was validated with many errors due to the structure of using Jinja
 The JavaScript code was validated with some 'unused variable' errors, however this is due to onClick functions and these functions are being called on the HTML page. See image for examples:
 ![JavaScript Validation](testing/Validation-js.png "JavaScript Validation")
 
-The Python code was validated:
-![JavaScript Validation](testing/Validation-js.png "JavaScript Validation")
+The Python code was validated to be PEP8 compliant. There was one issue, but this stemed from an error in Code Institute's teaching materials with an indent issue. This was however fixed by Tim, a Code Institute tutor:
+![Python Validation](testing/Validation-python.png "Python Validation")
 
 ### Interesting and Ongoing Bugs
 1. Issue receiving data from MongoDB
