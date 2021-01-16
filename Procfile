@@ -1,1 +1,1 @@
-web: python katt.py
+web: python app.py
