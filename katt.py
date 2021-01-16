@@ -124,16 +124,36 @@ def add_activity():
             "duration": "test_duration"
         }
         mongo.db.activities.insert_one(activity)
+        flash("Task Successfully Added")
         return redirect(url_for("get_activities"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_activity.html", categories=categories)
 
 
 @app.route("/edit_activity/<activity_id>", methods=["GET", "POST"])
 def edit_activity(activity_id):
+    if request.method == "POST":
+        activityEdit = {
+            "date": request.form.get("date"),
+            "activity_name": request.form.get("category_name"),
+            "start_time": request.form.get("start_time"),
+            "end_time": request.form.get("end_time"),
+            "user_id": session["user"],
+            "duration": "test_duration"
+        }
+        mongo.db.activities.update({"_id": ObjectId(activity_id)}, activityEdit)
+        flash("Activity Successfully Update")
     activity = mongo.db.activities.find_one({"_id": ObjectId(activity_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_activity.html", activity=activity, categories=categories)
+
+
+@app.route("/delete_activity/<activity_id>")
+def delete_task(activity_id):
+    mongo.db.activities.remove({"_id": ObjectId(activity_id)})
+    flash("Activity Successfully Deleted")
+    return redirect(url_for("get_activites"))
 
 
 if __name__ == "__main__":
