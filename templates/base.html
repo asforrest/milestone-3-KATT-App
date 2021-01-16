@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <!-- IMPORT CSS: Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- IMPORT CSS: KATT App -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     
@@ -26,7 +26,7 @@
         <!-- Desktop navbar -->
         <nav class="nav-extended">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_activities') }}" class="brand-logo">Logo</a>
+                <a href="{{ url_for('get_activities') }}" class="brand-logo">KATT</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                 {% if session.user %}
@@ -34,10 +34,9 @@
                     <li><a href="{{ url_for('get_activities') }}">Time Tracker</a></li>
                     <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
                     <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     <!-- Materialize Modal -->    
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">KATT Radio</a>
+                    <a class="waves-effect waves-light btn modal-trigger blue darken-2" href="#modal1">KATT Radio</a>
 
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal modal-radio">
@@ -46,7 +45,7 @@
                         <p>The best music all the <strong>time</strong>, every<strong>time</strong>!</p>
                         <p><iframe src="https://open.spotify.com/embed/playlist/4R66AH8WgbautnmNeaxQw7" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p>
                         <p> These playlists have been created by FC Music.</p>
-                        <a href="#!" class="modal-close waves-effect waves-light btn">Close</a>
+                        <a href="#!" class="modal-close waves-effect waves-light btn blue darken-2">Close</a>
                         </div>
                     </div>
                 {% else %}
@@ -55,7 +54,7 @@
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                     <!-- Materialize Modal -->    
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">KATT Radio</a>
+                    <a class="waves-effect waves-light btn modal-trigger blue darken-2" href="#modal1">KATT Radio</a>
 
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
@@ -66,8 +65,6 @@
                         </div>
                     </div>
                 {% endif %}
-
-                    
                 </ul>
             </div>
         </nav>

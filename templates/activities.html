@@ -4,61 +4,83 @@
 <div class="row container-timer">
     <div class="col s12 center">
         <br>
-        <h4>Duration:</h4>
-        <h1 id="count_up_timer" style="font-weight: 600;"><span id="minutes"></span>:<span id="seconds"></span></h1>
-    <a href="{{ url_for('add_activity') }}" class="waves-effect waves-light btn-small btn-activity-stop" onclick="" name="add_activity" id="add_activity"><i class="fas fa-edit left"></i>Manually Add Activity</a>
-        <br>
-        <br>
-        <br>
-        <h4>Currently you are:</h4>
-        <div id="current_activity">
-        <h1 style="font-weight: 600;"><i class="fas fa-ban"></i> No Activity Selected</h1>
+        <div class="row">
+            <div class="col s1"></div>
+            <div class="col s10 time-tracker-intro">
+                <h5>Introduction</h5>
+                <p>This is the main page for KATT. Here you can select your current task and see how much time has epelapsed on the current activity. Please select one of the activities bellow to start the timer for that activity.</p>
+                <p>When you want to stop the timer please click <strong>Stop Activity</strong>. Altneratively you can also enter your activities manually by clicking on the blue <strong>Add Manually</strong> button.</p>
+            </div>
+            <div class="col s1">
+            </div>
         </div>
-        <a class="waves-effect waves-light btn-small red darken-1 btn-activity-stop" onclick="currentlyStopped()"><i class="fas fa-ban left"></i>Stop Activity</a>
-    </div>
-</div>
-<div class="row">
-    <div class="col s12 center">
         <br>
-        <h5>Please select an activity bellow to restart the timer.</h5>
+        <div class="row">
+            <h4>Duration:</h4>
+            <h1 id="count_up_timer" style="font-weight: 600;"><span id="minutes"></span>:<span id="seconds"></span></h1>
+            <br>
+            <h4>Currently you are:</h4>
+            <div id="current_activity">
+                <h1 style="font-weight: 600;"><i class="fas fa-ban"></i> No Activity Selected</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col s3"></div>
+            <div class="col s3 center">
+                <a href="{{ url_for('add_activity') }}" class="waves-effect waves-light btn-small blue darken-2" onclick="" name="add_activity" id="add_activity"><i class="fas fa-edit left"></i>Manually Add</a> 
+            </div>
+            <div class="col s3 center">
+            <a class="waves-effect waves-light btn-small red darken-1 btn-activity-stop" onclick="currentlyStopped()" id="stop-activity-button" ><i class="fas fa-ban left"></i>Stop Activity</a>
+            </div>
+            <div class="col s3"></div>
+        </div>
     </div>
 </div>
-<div class="row">
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyWorking()" name="work" id="work"><i class="fas fa-briefcase left"></i>Work</a>
+<div  id="activity-selection-section">
+    <div class="row">
+        <div class="col s12 center">
+            <br>
+            <h5>Please select an activity bellow to restart the timer.</h5>
+        </div>
     </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlySleeping()" name="sleep" id="sleep"><i class="fas fa-bed left"></i>Sleep</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyChildcaring()" name="childcare" id="childcare"><i class="fas fa-baby left"></i>Childcare</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyStudying()" name="study" id="study"><i class="fas fa-graduation-cap left"></i>Study</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyStrengthing()" name="strength" id="strength"><i class="fas fa-dumbbell left"></i>Strength</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyCardioing()" name="cardio" id="cardio"><i class="fas fa-running left"></i>Cardio</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyMusicing()" name="music" id="music"><i class="fas fa-guitar left"></i>Music</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyCleaning()" name="cleaning" id="cleaning"><i class="fas fa-soap left"></i>Cleaning</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyTraveling()" name="travel" id="travel"><i class="fas fa-compass left"></i>Travel</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyWatching()" name="watching" id="watching"><i class="fas fa-film left"></i>Watching</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyVideogaming()" name="games" id="games"><i class="fas fa-gamepad left"></i>games</a>
-    </div>
-    <div class="col s6 m4 l3 center">
-        <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyOthering()" name="other" id="other"><i class="fas fa-random left"></i>Other</a>
+    <div class="row">
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyWorking()" name="work" id="work"><i class="fas fa-briefcase left"></i>Work</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlySleeping()" name="sleep" id="sleep"><i class="fas fa-bed left"></i>Sleep</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyChildcaring()" name="childcare" id="childcare"><i class="fas fa-baby left"></i>Childcare</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyStudying()" name="study" id="study"><i class="fas fa-graduation-cap left"></i>Study</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyStrengthing()" name="strength" id="strength"><i class="fas fa-dumbbell left"></i>Strength</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyCardioing()" name="cardio" id="cardio"><i class="fas fa-running left"></i>Cardio</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyMusicing()" name="music" id="music"><i class="fas fa-guitar left"></i>Music</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyCleaning()" name="cleaning" id="cleaning"><i class="fas fa-soap left"></i>Cleaning</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyTraveling()" name="travel" id="travel"><i class="fas fa-compass left"></i>Travel</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyWatching()" name="watching" id="watching"><i class="fas fa-film left"></i>Watching</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyGaming()" name="games" id="games"><i class="fas fa-gamepad left"></i>games</a>
+        </div>
+        <div class="col s6 m4 l3 center">
+            <a class="waves-effect waves-light btn-large btn-activity-input" onclick="currentlyOthering()" name="other" id="other"><i class="fas fa-random left"></i>Other</a>
+        </div>
     </div>
 </div>
 {% endblock %}

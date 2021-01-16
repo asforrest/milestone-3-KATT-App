@@ -124,7 +124,6 @@ def add_activity():
             "duration": "test_duration"
         }
         mongo.db.activities.insert_one(activity)
-        flash("Activity added successfully")
         return redirect(url_for("get_activities"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_activity.html", categories=categories)

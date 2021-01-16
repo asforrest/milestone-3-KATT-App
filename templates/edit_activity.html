@@ -11,16 +11,20 @@
                 <form class="col s12" method="POST" action="{{ url_for('edit_activity', activity_id=activity._id) }}">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="date" name="date" type="text" class="datepicker validate" required>
+                            <input id="date" name="date" type="text" value="{{ activity.date }}" class="datepicker validate" required>
                             <label for="date"><i class="fas fa-date"></i> Date</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <select id="category_name" name="category_name" class="validate dropdown-formatting" required>
-                                <option value="" disabled selected>Choose your activity</option>
+                                <option value="" disabled>Choose Category</option>
                                 {% for category in categories %}
-                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                    {% if category.category_name == activity.activity_name %}
+                                        <option value="{{ category.category_name }}" selected>{{ category.category_name|capitalize }}</option>
+                                    {% else %}
+                                        <option value="{{ category.category_name }}">{{ category.category_name|capitalize }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                             <label>Activity</label>
@@ -28,18 +32,19 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="start_time" name="start_time" type="time" class="validate" required>
+                            <input id="start_time" name="start_time" type="time" value="{{ activity.start_time }}" class="validate" required>
                             <label for="start_time"><i class="fas fa-time"></i> Start Time</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="end_time" name="end_time" type="time" class="validate" required>
+                            <input id="end_time" name="end_time" type="time" value="{{ activity.end_time }}"class="validate" required>
                             <label for="end_time"><i class="fas fa-time"></i> End Time</label>
                         </div>
                     </div>
                     <div class="row">
-                        <button type="submit" class="col s12 btn-large">
-                            <i class="fas fa-edit"></i> Edit Activity 
+                        <button type="submit" class="col s12 btn-large full-width">
+                            <i class="fas fa-edit "></i> Edit Activity 
                         </button>
+                        <a href="{{ url_for('get_activities') }}" class="btn-large red full-width"><i class="fas fa-window-close "></i> Cancel</a>
                     </div>
                 </form>
             </div>

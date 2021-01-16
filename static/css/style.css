@@ -5,8 +5,8 @@ header {
 
 body {
     background-color: azure;
-    font-family: 'Heebo', sans-serif;
-    color: black;
+    font-family: 'Montserrat', sans-serif;
+    color: #262626;
 
 }
 
@@ -23,10 +23,6 @@ body {
     margin: 5px;
 }
 
-.btn-activity-stop {
-    margin-top: 20px;
-    width: 25%;
-}
 
 .container-timer {
     height: 40vh;
@@ -34,4 +30,15 @@ body {
 
 .modal-radio {
     background-color: darkslategray;
+}
+
+.time-tracker-intro {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 20px;
 }

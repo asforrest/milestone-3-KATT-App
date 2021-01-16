@@ -23,7 +23,7 @@ Here is an overview of all of your logged activities.
                 {% for activity in activities %}
                 <tr>
                     <td>{{ activity.date }}</td>
-                    <td>{{ activity.activity_name }}</td>
+                    <td>{{ activity.activity_name|capitalize }}</td>
                     <td>{{ activity.start_time }}</td>
                     <td>{{ activity.end_time }}</td>
                     <td>{{ activity.duration }}</td>

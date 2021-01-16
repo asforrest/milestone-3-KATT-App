@@ -88,6 +88,7 @@ function startTime(a){
     currentDate = new Date();
     start_time = currentDate.toLocaleTimeString();
     activity_name = a
+    /* Page 0 introduction */
 }
 
 function writeActivity(){
@@ -118,6 +119,18 @@ function writeActivity(){
     })
 }
 
+// The following was adapted from a W3Schools tutorial. Source:
+// https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+
+function showHideActivities() {
+    var x = document.getElementById("activity-selection-section");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
 
 
 // Stopwatch button triggers
@@ -126,66 +139,89 @@ function currentlyStopped() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-ban"></i> No Activity Selected</h1>';
     stopTimer()
     writeActivity()
+    showHideActivities()
 }
 
 function currentlyWorking() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-briefcase"></i>  Working</h1>';
     restartTimer()
-    startTime('working')
+    startTime('work')
+    showHideActivities()
 }
 
 function currentlySleeping() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-bed"></i>  Sleep</h1>';
     restartTimer()
+    startTime('sleep')
+    showHideActivities()
 }
 
 function currentlyChildcaring() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-baby"></i>  Childcare</h1>';
     restartTimer()
+    startTime('childcare')
+    showHideActivities()
 }
 
 function currentlyStudying() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-graduation-cap"></i>  Study</h1>';
     restartTimer()
+    startTime('study')
+    showHideActivities()
 }
 
 function currentlyStrengthing() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-dumbbell"></i>  Strength</h1>';
     restartTimer()
+    startTime('strength')
+    showHideActivities()
 }
 
 function currentlyCardioing() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-running"></i>  Cardio</h1>';
     restartTimer()
+    startTime('cardio')
+    showHideActivities()
 }
 
 function currentlyMusicing() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-guitar"></i>  Play Music</h1>';
     restartTimer()
+    startTime('music')
+    showHideActivities()
 }
 
 function currentlyCleaning() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-soap"></i>  Cleaning</h1>';
     restartTimer()
+    startTime('clean')
+    showHideActivities()
 }
 
 function currentlyTraveling() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-compass"></i>  Travel</h1>';
     restartTimer()
+    startTime('travel')
+    showHideActivities()
 }
 
 function currentlyWatching() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-film"></i>  Watching</h1>';
     restartTimer()
+    startTime('watch')
+    showHideActivities()
 }
 
-function currentlyVideogaming() {
+function currentlyGaming() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-gamepad"></i>  Games</h1>';
     restartTimer()
+    startTime('game')
+    showHideActivities()
 }
 
 function currentlyOthering() {
     document.getElementById("current_activity").innerHTML = '<h1 style="font-weight: 600;"><i class="fas fa-random"></i>  Other</h1>';
     restartTimer()
+    startTime('Other')
+    showHideActivities()
 }
-
