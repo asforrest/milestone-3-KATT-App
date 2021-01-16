@@ -119,8 +119,8 @@ When taking the methodology into account the following process has been created:
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
--   [Python3](http://https://en.wikipedia.org/wiki/Python_(programming_language)
--   [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
+-   [Python3](http://https://en.wikipedia.org/wiki/Python_(programming_language))
+-   [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engines))
 
 ### Frameworks, Libraries & Programs Used
 
@@ -217,7 +217,7 @@ The Python code was validated to be PEP8 compliant. There was one issue, but thi
 
 This project is saved to a [repository on GitHub](https://github.com/asforrest/KATT-App) and as such is open to the public.
 
-This project has also been [published to Heroku]((https://katt-app.herokuapp.com/) both for evaluation by Code Institute and so that users can access and use the Web App.
+This project has also been [published to Heroku](https://katt-app.herokuapp.com/) both for evaluation by Code Institute and so that users can access and use the Web App.
 
 ### Steps For Deployment on Heroku
 
@@ -261,5 +261,5 @@ The image used on the homepage is an embedded image hosted on Giphy. This is att
 I would like to thank:
 - My mentor Jonathan for his patience, knowledge, experience and support.
 - Kevin, Michael, and all the other tutors at Code Institute, who took the time to check my workspace, my project and lead me towards the answers I was looking for without just giving me the answers.
-- My wife, Alba, for het patience and for taking care of our newborn baby, Zoë, while finishing up this project.
+- My wife, Alba, for her patience and for taking care of our newborn baby, Zoë, while finishing up this project.
 - Code Institute Student Care for checking in with me, keeping me motivated, and being understanding about the fact that becoming a new father meant that my priorities were split between my studies, work and childcare duties.
